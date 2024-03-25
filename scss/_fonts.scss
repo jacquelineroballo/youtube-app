@@ -1,0 +1,19 @@
+@mixin font-title {
+    @font-face {
+        font-family: "AlternateGotNo1D";
+        src: url(font/AlternateGotNo1D.ttf);
+        src:
+            local("AlternateGotNo1D"),
+            url(font/AlternateGotNo1D.eot),
+            url(font/AlternateGotNo1D.eot?#iefix) format("embedded-opentype"),
+            url(font/AlternateGotNo1D.woff) format("woff"),
+            url(font/AlternateGotNo1D.woff2) format("woff2"),
+            url(font/AlternateGotNo1D.svg) format("svg"),
+            url(font/AlternateGotNo1D.ttf) format("truetype");
+
+        font-weight: normal;
+        font-style: normal;
+    }
+}
+
+$font-primary: "AlternateGotNo1D";

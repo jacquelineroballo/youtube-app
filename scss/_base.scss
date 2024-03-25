@@ -1,0 +1,111 @@
+@import "fonts";
+@import "mixins";
+@import "breakpoints";
+@import "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css";
+
+body {
+    scroll-behavior: smooth;
+}
+
+.body {
+    background-color: $color-bg-primary;
+    font-family: $font-primary;
+    .head {
+        &-logo {
+            width: 40px;
+            height: 40px;
+        }
+        &-text {
+            color: $color-font-primary;
+            letter-spacing: 2px;
+        }
+    }
+
+    .subnav {
+        display: flex;
+        justify-content: center;
+        &-icon {
+            width: 40px;
+            height: 40px;
+            @include xs {
+                width: 25px;
+                height: 25px;
+            }
+            @include transition;
+            &:hover {
+                transform: scale(1.1);
+                cursor: pointer;
+                @include transition;
+            }
+        }
+        #ico-add {
+            background-image: url("img/ico-add.png");
+            background-size: 40px 40px;
+            @include xs {
+                background-size: 25px 25px;
+            }
+        }
+        #ico-sort {
+            background-image: url("img/ico-sort.png");
+            background-size: 40px 40px;
+            @include xs {
+                background-size: 25px 25px;
+            }
+        }
+        #buscador {
+            input::placeholder {
+                letter-spacing: 1px;
+            }
+            .input-group {
+                @include xs {
+                    width: 100% !important;
+                }
+                .br-left {
+                    border-top-left-radius: 50rem;
+                    border-bottom-left-radius: 50rem;
+                }
+                .br-right {
+                    border-top-right-radius: 50rem;
+                    border-bottom-right-radius: 50rem;
+                }
+                .br-left,
+                .br-right {
+                    @include xs {
+                        height: 30px;
+                    }
+                }
+            }
+            .añadir-video {
+                @include xs {
+                    height: 30px;
+                    width: 100% !important;
+                }
+            }
+        }
+        #listado {
+            padding: 6px;
+            /* overflow-y: scroll; */
+            color: #999;
+            .listado-videos {
+                font-size: 30px;
+                @include xs {
+                    font-size: 14px;
+                }
+            }
+        }
+        #rpd {
+            width: 75%;
+            min-height: 500px;
+            margin-bottom: 3rem;
+            border: double 3px transparent;
+            border-radius: 25px;
+            background-image: linear-gradient(#0f0f0f, #0f0f0f95), $bg-gradient;
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
+            @include xs {
+                width: 96%;
+                min-height: 285px;
+            }
+        }
+    }
+}

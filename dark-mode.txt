@@ -1,0 +1,91 @@
+
+
+    Set up your Vue.js project with Vuetify, a Vue.js component framework.
+
+    Add the Vuetify dark theme to your project by installing it as a dependency:
+
+bash
+
+npm install @vue/composition-api @vue/apollo-composable vuetify@2.5.6
+
+    Create a new file named vuetify.js in your src folder and add the following code:
+
+javascript
+
+import Vue from 'vue'
+
+import Vuetify from 'vuetify/lib'
+
+
+Vue.use(Vuetify)
+
+
+export default new Vuetify({
+
+ theme: {
+
+    dark: true,
+
+ },
+
+})
+
+    In your main.js file, import and use the Vuetify object:
+
+javascript
+
+import Vue from 'vue'
+
+import App from './App.vue'
+
+import vuetify from './vuetify'
+
+
+Vue.config.productionTip = false
+
+
+new Vue({
+
+ vuetify,
+
+ render: h => h(App),
+
+}).$mount('#app')
+
+    Now, you can create a button component that toggles the dark mode theme. In the component's methods, add a toggleDarkMode function that toggles the dark property of the theme object:
+
+javascript
+
+methods: {
+
+ toggleDarkMode() {
+
+    this.$vuetify.theme.dark = !this.$vuetify.theme.dark
+
+ },
+
+}
+
+    To make this toggle persistent, you can use the localStorage API to store the dark mode state in the browser's local storage. Here's how you can do it:
+
+javascript
+
+created() {
+
+ this.$vuetify.theme.dark = localStorage.getItem('darkMode') === 'true'
+
+},
+
+methods: {
+
+ toggleDarkMode() {
+
+    this.$vuetify.theme.dark = !this.$vuetify.theme.dark
+
+    localStorage.setItem('darkMode', this.$vuetify.theme.dark)
+
+ },
+
+}
+
+Now, your Vue.js project should have a toggle button that can switch the theme between light and dark modes.

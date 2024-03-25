@@ -1,0 +1,15 @@
+@mixin transition {
+    transition: all 0.18s ease;
+    /* transition:
+        color 0.15s ease-in-out,
+        background-color 0.15s ease-in-out,
+        border-color 0.15s ease-in-out,
+        box-shadow 0.15s ease-in-out,
+        -webkit-box-shadow 0.15s ease-in-out; */
+}
+
+$color-font-primary: white;
+$color-font-secundary: #7f7f7f;
+
+$color-bg-primary: #0f0f0f;
+$bg-gradient: linear-gradient(30deg, #085174 0%, #00e8fe 100%);
